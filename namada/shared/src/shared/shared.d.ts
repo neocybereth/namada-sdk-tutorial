@@ -14,6 +14,10 @@ export class Query {
 * @returns {Promise<any>}
 */
   query_epoch(): Promise<any>;
+/**
+* @returns {Promise<any>}
+*/
+  query_native_token(): Promise<any>;
 }
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
@@ -23,12 +27,13 @@ export interface InitOutput {
   readonly __wbg_query_free: (a: number) => void;
   readonly query_new: (a: number, b: number) => number;
   readonly query_query_epoch: (a: number) => number;
+  readonly query_query_native_token: (a: number) => number;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_export_2: WebAssembly.Table;
-  readonly _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h01e45e3165ad0f94: (a: number, b: number, c: number) => void;
+  readonly _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hffa59ac14e3593e3: (a: number, b: number, c: number) => void;
   readonly __wbindgen_exn_store: (a: number) => void;
-  readonly wasm_bindgen__convert__closures__invoke2_mut__hff09e2784b4d7aa6: (a: number, b: number, c: number, d: number) => void;
+  readonly wasm_bindgen__convert__closures__invoke2_mut__h5cb61d5b7380edcf: (a: number, b: number, c: number, d: number) => void;
 }
 
 export type SyncInitInput = BufferSource | WebAssembly.Module;

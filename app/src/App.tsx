@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 function App() {
   async function clickMe() {
     const epoch = await query?.query_epoch();
+    const stuff = await query?.query_native_token();
+    setNativeToken(stuff)
     setEpoch(epoch)
   }
 
@@ -18,6 +20,7 @@ function App() {
     init()
   }, [])
 
+  const [nativeToken, setNativeToken] = useState<string | undefined>(undefined) 
   const [epoch, setEpoch] = useState<number | undefined>()
   const [loading, setLoading] = useState<boolean>(true)
   const [query, setQuery] = useState<Query | undefined>()
@@ -29,6 +32,7 @@ function App() {
         <div>
           <button onClick={clickMe}>Click me</button>
           {epoch && <p>Epoch: {epoch}</p>}
+          {nativeToken && <p>Native Token: {nativeToken}</p>}
         </div>
       : <p>Loading...</p>
       }

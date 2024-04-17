@@ -6,7 +6,8 @@
     "namada/*"
   ],
   "scripts": {
-    "start": "cd app && npm start"
+    "start": "cd app && npm start",
+    "wasm:build:dev": "wasm-pack build ./lib --dev --target web --out-dir ../src/shared"
   },
   "dependencies": {
     "@namada/shared": "^0.1.0"

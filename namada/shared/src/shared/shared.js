@@ -246,7 +246,7 @@ function _assertNum(n) {
 function __wbg_adapter_28(arg0, arg1, arg2) {
     _assertNum(arg0);
     _assertNum(arg1);
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h01e45e3165ad0f94(arg0, arg1, addHeapObject(arg2));
+    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hffa59ac14e3593e3(arg0, arg1, addHeapObject(arg2));
 }
 
 function handleError(f, args) {
@@ -256,10 +256,10 @@ function handleError(f, args) {
         wasm.__wbindgen_exn_store(addHeapObject(e));
     }
 }
-function __wbg_adapter_63(arg0, arg1, arg2, arg3) {
+function __wbg_adapter_64(arg0, arg1, arg2, arg3) {
     _assertNum(arg0);
     _assertNum(arg1);
-    wasm.wasm_bindgen__convert__closures__invoke2_mut__hff09e2784b4d7aa6(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
+    wasm.wasm_bindgen__convert__closures__invoke2_mut__h5cb61d5b7380edcf(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
 }
 
 const QueryFinalization = (typeof FinalizationRegistry === 'undefined')
@@ -299,6 +299,15 @@ export class Query {
         if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
         _assertNum(this.__wbg_ptr);
         const ret = wasm.query_query_epoch(this.__wbg_ptr);
+        return takeObject(ret);
+    }
+    /**
+    * @returns {Promise<any>}
+    */
+    query_native_token() {
+        if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
+        _assertNum(this.__wbg_ptr);
+        const ret = wasm.query_query_native_token(this.__wbg_ptr);
         return takeObject(ret);
     }
 }
@@ -463,7 +472,7 @@ function __wbg_get_imports() {
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_63(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_64(a, state0.b, arg0, arg1);
                 } finally {
                     state0.a = a;
                 }
@@ -550,8 +559,8 @@ function __wbg_get_imports() {
         const ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper1971 = function() { return logError(function (arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 342, __wbg_adapter_28);
+    imports.wbg.__wbindgen_closure_wrapper2237 = function() { return logError(function (arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 490, __wbg_adapter_28);
         return addHeapObject(ret);
     }, arguments) };
 

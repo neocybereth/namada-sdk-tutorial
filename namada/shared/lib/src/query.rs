@@ -1,4 +1,5 @@
 use namada::sdk::rpc::query_epoch;
+use namada::sdk::rpc::query_native_token;
 use wasm_bindgen::prelude::*;
 use crate::rpc_client::HttpClient;
 use gloo_utils::format::JsValueSerdeExt;
@@ -21,6 +22,14 @@ impl Query {
     pub async fn query_epoch(&self) -> Result<JsValue, JsError> {
         let epoch = query_epoch(&self.client).await?;
         match JsValue::from_serde(&epoch) {
+            Ok(v) => Ok(v),
+            Err(e) => Err(JsError::new(&e.to_string())),
+        }
+    }
+
+    pub async fn query_native_token(&self) -> Result<JsValue, JsError> {
+        let token = query_native_token(&self.client).await?;
+        match JsValue::from_serde(&token) {
             Ok(v) => Ok(v),
             Err(e) => Err(JsError::new(&e.to_string())),
         }
